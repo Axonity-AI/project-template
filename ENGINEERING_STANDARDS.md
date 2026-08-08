@@ -141,6 +141,7 @@ The companion file, `REFACTOR_GUIDE.md`, is the executable checklist — hand th
 | Trunk-based dev | Still partial — `axonity_chatbot`'s `phase_3` remains a long-lived branch; `phase_3` → `main` consolidation is still an open decision | Short branches + PRs |
 | CODEOWNERS | Present on all 3 repos + template | `CODEOWNERS` file |
 | CI gating (blocking) | `axonity_chatbot` and `visual_search_ranking` both have real, passing CI (secrets/lint/test/docker); `visual_search_ranking`'s `black`/`isort` checks are still `continue-on-error: true` (harmless report, not a gate) | `.github/workflows/ci.yml` |
+| Type-check gate | **Template has it** (`typecheck` job, mypy) as of 2026-08-08 — added after a client review caught this doc promising it without it existing anywhere. **Not yet backported** to `visual_search_ranking` or `axonity_chatbot`'s Python backends (their frontends already have real `tsc` type-checking) — deliberately deferred, since bolting mypy onto never-type-annotated code tends to surface a real backlog of errors that deserves its own reviewed pass, not a drive-by | `pyproject.toml` `[tool.mypy]` + CI `typecheck` job |
 | Secret scanning + push protection | **On for all 3 repos** (all now public) | GitHub security settings + pre-commit hook |
 | Dependabot | **Enabled on all 3 repos** (version-update PRs + vulnerability alerts) | `.github/dependabot.yml` |
 | Conventional Commits | Enforced via pre-commit on `axonity_chatbot` and `visual_search_ranking`; historical commits predate this and remain freeform | pre-commit commit-msg hook |
