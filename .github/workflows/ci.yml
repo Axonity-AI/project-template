@@ -83,7 +83,11 @@ jobs:
           file: docker/Dockerfile
           push: false
           load: true
-          tags: "{{PACKAGE_NAME}}:latest"
+          # Never pushed anywhere (push: false, load: true is a build-only
+          # check) -- a fixed tag avoids depending on {{PACKAGE_NAME}} ever
+          # being resolved, so this job passes even against the raw,
+          # unbootstrapped template.
+          tags: app:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
