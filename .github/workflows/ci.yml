@@ -83,7 +83,7 @@ jobs:
           file: docker/Dockerfile
           push: false
           load: true
-          tags: {{PACKAGE_NAME}}:latest
+          tags: "{{PACKAGE_NAME}}:latest"
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
