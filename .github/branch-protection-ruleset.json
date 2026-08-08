@@ -28,6 +28,7 @@
         "required_status_checks": [
           { "context": "secrets" },
           { "context": "lint" },
+          { "context": "typecheck" },
           { "context": "test" }
         ]
       }
