@@ -21,5 +21,10 @@ docker build -t {{PACKAGE_NAME}} -f docker/Dockerfile .
 docker compose -f docker/compose.yml up
 ```
 
+## New to the team?
+Read [ONBOARDING.md](ONBOARDING.md) first — the day-to-day workflow (branches, PRs,
+CI, commit format, ADRs), written assuming no prior experience with any of it.
+[ENGINEERING_STANDARDS.md](ENGINEERING_STANDARDS.md) covers why we work this way.
+
 ## Contacts
 Owner: TBD
